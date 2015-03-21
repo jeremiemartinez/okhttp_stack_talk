@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot' 
+
+jar {
+    baseName = 'android_stack'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.retrofit:retrofit-mock:1.9.0'
+    compile 'io.reactivex:rxjava:1.0.8'
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile 'com.squareup.okhttp:mockwebserver:2.2.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
