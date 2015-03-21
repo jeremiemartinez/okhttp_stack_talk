@@ -5,7 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GithubServiceTest {
 
@@ -27,16 +27,19 @@ public class GithubServiceTest {
 
     @Test
     public void test_followers() throws Exception {
+        server.play();
         // TODO
     }
 
     @Test
     public void test_followers_of_followers() throws Exception {
+        server.play();
         // TODO
     }
 
     @Test
     public void test_format_url() throws Exception {
+        server.play();
         GithubService githubService = new GithubService("http://test.org");
         String url = githubService.formatUrl("jm");
         assertEquals("http://test.org/users/jm/followers", url);

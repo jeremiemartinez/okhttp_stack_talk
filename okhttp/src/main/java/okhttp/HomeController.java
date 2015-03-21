@@ -1,15 +1,13 @@
 package okhttp;
 
-import okhttp.model.User;
 import okhttp.service.GithubService;
-import okhttp.service.solution.SolutionGithubService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 
 @Controller

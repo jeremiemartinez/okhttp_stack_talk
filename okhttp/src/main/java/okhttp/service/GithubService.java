@@ -1,7 +1,5 @@
 package okhttp.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.squareup.okhttp.OkHttpClient;
 import okhttp.model.User;
 
 import java.io.IOException;
@@ -15,6 +13,7 @@ public class GithubService {
     public GithubService(String urlServer) {
         this.urlServer = urlServer;
         // TODO
+
     }
 
     public Map<User, Integer> followersOfFollowers(String username) throws IOException {

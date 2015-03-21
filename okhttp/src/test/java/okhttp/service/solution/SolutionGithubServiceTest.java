@@ -3,7 +3,6 @@ package okhttp.service.solution;
 import com.squareup.okhttp.mockwebserver.MockResponse;
 import com.squareup.okhttp.mockwebserver.MockWebServer;
 import okhttp.model.User;
-import okhttp.service.solution.SolutionGithubService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,9 +16,9 @@ import static org.junit.Assert.assertNotNull;
 
 public class SolutionGithubServiceTest {
 
-    private static final String FOLLOWERS_1 = "[{ \"login\":\"user1\"},{\"login\":\"user2\"}]";
-    private static final String FOLLOWERS_2 = "[{ \"login\":\"user3\"}]";
-    private static final String FOLLOWERS_3 = "[{ \"login\":\"user4\"},{\"login\":\"user5\"},{\"login\":\"user6\"}]";
+    private static final String FOLLOWERS = "[{ \"login\":\"user1\"},{\"login\":\"user2\"}]";
+    private static final String FOLLOWERS_USER_1 = "[{ \"login\":\"user3\"}]";
+    private static final String FOLLOWERS_USER_2 = "[{ \"login\":\"user4\"},{\"login\":\"user5\"},{\"login\":\"user6\"}]";
 
     private MockWebServer server;
 
@@ -35,7 +34,7 @@ public class SolutionGithubServiceTest {
 
     @Test
     public void test_followers() throws Exception {
-        server.enqueue(new MockResponse().setBody(FOLLOWERS_1));
+        server.enqueue(new MockResponse().setBody(FOLLOWERS));
         server.play();
 
         URL baseUrl = server.getUrl("");
@@ -51,9 +50,9 @@ public class SolutionGithubServiceTest {
 
     @Test
     public void test_followers_of_followers() throws Exception {
-        server.enqueue(new MockResponse().setBody(FOLLOWERS_1));
-        server.enqueue(new MockResponse().setBody(FOLLOWERS_2));
-        server.enqueue(new MockResponse().setBody(FOLLOWERS_3));
+        server.enqueue(new MockResponse().setBody(FOLLOWERS));
+        server.enqueue(new MockResponse().setBody(FOLLOWERS_USER_1));
+        server.enqueue(new MockResponse().setBody(FOLLOWERS_USER_2));
         server.play();
 
         URL baseUrl = server.getUrl("");
