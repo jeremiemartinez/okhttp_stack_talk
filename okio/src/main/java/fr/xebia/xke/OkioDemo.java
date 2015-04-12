@@ -13,7 +13,7 @@ public class OkioDemo {
     private static final ByteString PNG_HEADER = ByteString.decodeHex("89504e470d0a1a0a");
 
     public static void main(String[] args) throws IOException {
-        decodePng(new FileInputStream("./xebia.png"));
+        decodePng(new FileInputStream("../okio/xebia.png"));
     }
 
     private static void decodePng(InputStream in) throws IOException {
