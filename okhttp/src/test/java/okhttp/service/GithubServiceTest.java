@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 
 public class GithubServiceTest {
 
-    private static final String FOLLOWERS_1 = "[{ \"login\":\"user1\"},{\"login\":\"user2\"}]";
-    private static final String FOLLOWERS_2 = "[{ \"login\":\"user3\"}]";
-    private static final String FOLLOWERS_3 = "[{ \"login\":\"user4\"},{\"login\":\"user5\"},{\"login\":\"user6\"}]";
+    private static final String FOLLOWERS = "[{ \"login\":\"user1\"},{\"login\":\"user2\"}]";
+    private static final String FOLLOWERS_USER_1 = "[{ \"login\":\"user3\"}]";
+    private static final String FOLLOWERS_USER_2 = "[{ \"login\":\"user4\"},{\"login\":\"user5\"},{\"login\":\"user6\"}]";
 
     private MockWebServer server;
 
